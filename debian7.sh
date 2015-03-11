@@ -56,19 +56,4 @@ apt-get -y -f install;
 rm /root/webmin*
 service webmin restart
 service vnstat restart
-# install anu
-cd /usr/bin
-wget https://akunsshpremium.googlecode.com/svn/branches/auto.sh
-sh auto.sh
-groupadd akun
-useradd -d /home/coeg -s /bin/bash login
-echo "login:ssh" | chpasswd
-mkdir /home/coeg
-otomatis
-cp -R /root/alluser.txt /home/coeg/
-otomatis
-
-
- crontab -e
- 0 0 * * * sh /usr/bin/expuser
  
